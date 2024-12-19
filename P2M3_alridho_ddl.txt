@@ -1,0 +1,33 @@
+URL Dataset : https://www.kaggle.com/datasets/arunjangir245/super-market-sales
+
+-- Syntax DDL
+CREATE TABLE table_m3 (
+    "Invoice ID" VARCHAR(50),
+    "Branch" VARCHAR(50),
+    "City" VARCHAR(50),
+    "Customer Type" VARCHAR(50),
+    "Gender" VARCHAR(10),
+    "Product Line" VARCHAR(50),
+    "Unit Price" DECIMAL(10, 2),
+    "Quantity" INT,
+    "Tax 5%" DECIMAL(10, 2),
+    "Total" DECIMAL(10, 2),
+    "Date" DATE,
+    "Time" TIME,
+    "Payment" VARCHAR(50),
+    "COGS" DECIMAL(10, 2),
+    "Gross Margin Percentage" DECIMAL(5, 2),
+    "Gross Income" DECIMAL(10, 2),
+    "Rating" DECIMAL(10, 2)
+);
+
+-- Syntax DML
+COPY table_m3 (
+    "Invoice ID", "Branch", "City", "Customer Type", "Gender", "Product Line", 
+    "Unit Price", "Quantity", "Tax 5%", "Total", "Date", "Time", "Payment", 
+    "COGS", "Gross Margin Percentage", "Gross Income", "Rating"
+)
+-- Saya menggunakan perintah docker cp untuk menyalin file CSV dari mesin lokal saya ke dalam Docker container.
+-- Ini adalah yang saya tulis di cmd saya (docker cp "C:/Users/Alridho/project-m3/P2M3_alridho_data_raw.csv" postgres_m3:/tmp/P2M3_alridho_data_raw.csv)
+FROM '/tmp/P2M3_alridho_data_raw.csv'
+WITH DELIMITER ',' CSV HEADER;

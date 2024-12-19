@@ -1,0 +1,23 @@
+[2024-12-05T08:24:47.534+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: H8CSVDAG.convertCSVtoJson scheduled__2024-12-05T08:19:45.559427+00:00 [queued]>
+[2024-12-05T08:24:47.541+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: H8CSVDAG.convertCSVtoJson scheduled__2024-12-05T08:19:45.559427+00:00 [queued]>
+[2024-12-05T08:24:47.542+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T08:24:47.542+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 2
+[2024-12-05T08:24:47.542+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T08:24:47.553+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): convertCSVtoJson> on 2024-12-05 08:19:45.559427+00:00
+[2024-12-05T08:24:47.557+0000] {standard_task_runner.py:52} INFO - Started process 389 to run task
+[2024-12-05T08:24:47.559+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'H8CSVDAG', 'convertCSVtoJson', 'scheduled__2024-12-05T08:19:45.559427+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/P2M3_alridho_DAG.py', '--cfg-path', '/tmp/tmpdy1tbz0l', '--error-file', '/tmp/tmpwv5q96eq']
+[2024-12-05T08:24:47.560+0000] {standard_task_runner.py:80} INFO - Job 12: Subtask convertCSVtoJson
+[2024-12-05T08:24:47.651+0000] {task_command.py:371} INFO - Running <TaskInstance: H8CSVDAG.convertCSVtoJson scheduled__2024-12-05T08:19:45.559427+00:00 [running]> on host 91c538a0d2ed
+[2024-12-05T08:24:47.740+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=raka
+AIRFLOW_CTX_DAG_ID=H8CSVDAG
+AIRFLOW_CTX_TASK_ID=convertCSVtoJson
+AIRFLOW_CTX_EXECUTION_DATE=2024-12-05T08:19:45.559427+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-12-05T08:19:45.559427+00:00
+[2024-12-05T08:24:47.772+0000] {python.py:173} INFO - Done. Returned value was: None
+[2024-12-05T08:24:47.795+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=H8CSVDAG, task_id=convertCSVtoJson, execution_date=20241205T081945, start_date=20241205T082447, end_date=20241205T082447
+[2024-12-05T08:24:47.811+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-12-05T08:24:47.861+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check

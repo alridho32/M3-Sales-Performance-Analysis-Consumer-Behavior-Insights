@@ -1,0 +1,75 @@
+[2024-12-05T11:43:11.606+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: P2M3.insert-data-to-elastic manual__2024-12-05T11:43:06.806334+00:00 [queued]>
+[2024-12-05T11:43:11.614+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: P2M3.insert-data-to-elastic manual__2024-12-05T11:43:06.806334+00:00 [queued]>
+[2024-12-05T11:43:11.615+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T11:43:11.615+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-12-05T11:43:11.615+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T11:43:11.627+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): insert-data-to-elastic> on 2024-12-05 11:43:06.806334+00:00
+[2024-12-05T11:43:11.633+0000] {standard_task_runner.py:52} INFO - Started process 549 to run task
+[2024-12-05T11:43:11.635+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'P2M3', 'insert-data-to-elastic', 'manual__2024-12-05T11:43:06.806334+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/P2M3_alridho_DAG.py', '--cfg-path', '/tmp/tmpe6dvgkmb', '--error-file', '/tmp/tmp9wtsbv67']
+[2024-12-05T11:43:11.636+0000] {standard_task_runner.py:80} INFO - Job 37: Subtask insert-data-to-elastic
+[2024-12-05T11:43:11.751+0000] {task_command.py:371} INFO - Running <TaskInstance: P2M3.insert-data-to-elastic manual__2024-12-05T11:43:06.806334+00:00 [running]> on host 9b483ed80620
+[2024-12-05T11:43:11.920+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alridho
+AIRFLOW_CTX_DAG_ID=P2M3
+AIRFLOW_CTX_TASK_ID=insert-data-to-elastic
+AIRFLOW_CTX_EXECUTION_DATE=2024-12-05T11:43:06.806334+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-12-05T11:43:06.806334+00:00
+[2024-12-05T11:43:11.933+0000] {base.py:271} INFO - HEAD http://elasticsearch:9200/ [status:200 request:0.002s]
+[2024-12-05T11:43:11.933+0000] {logging_mixin.py:115} INFO - Connection status :  True
+[2024-12-05T11:43:11.935+0000] {taskinstance.py:1902} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'target'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/airflow/dags/P2M3_alridho_DAG.py", line 119, in insert_into_elastic
+    print(i, r['target'])
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/series.py", line 942, in __getitem__
+    return self._get_value(key)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/series.py", line 1051, in _get_value
+    loc = self.index.get_loc(label)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'target'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'index'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/P2M3_alridho_DAG.py", line 122, in insert_into_elastic
+    print('Index Gagal : ', r['index'])
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/series.py", line 942, in __getitem__
+    return self._get_value(key)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/series.py", line 1051, in _get_value
+    loc = self.index.get_loc(label)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'index'
+[2024-12-05T11:43:11.960+0000] {taskinstance.py:1412} INFO - Marking task as FAILED. dag_id=P2M3, task_id=insert-data-to-elastic, execution_date=20241205T114306, start_date=20241205T114311, end_date=20241205T114311
+[2024-12-05T11:43:11.972+0000] {standard_task_runner.py:97} ERROR - Failed to execute job 37 for task insert-data-to-elastic ('index'; 549)
+[2024-12-05T11:43:12.009+0000] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-12-05T11:43:12.061+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check

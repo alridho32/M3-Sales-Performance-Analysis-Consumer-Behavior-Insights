@@ -1,0 +1,28 @@
+[2024-12-05T12:19:25.351+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: P2M3.starting manual__2024-12-05T12:18:59.835789+00:00 [queued]>
+[2024-12-05T12:19:25.394+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: P2M3.starting manual__2024-12-05T12:18:59.835789+00:00 [queued]>
+[2024-12-05T12:19:25.394+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T12:19:25.394+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-12-05T12:19:25.400+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T12:19:25.471+0000] {taskinstance.py:1389} INFO - Executing <Task(BashOperator): starting> on 2024-12-05 12:18:59.835789+00:00
+[2024-12-05T12:19:25.478+0000] {standard_task_runner.py:52} INFO - Started process 211 to run task
+[2024-12-05T12:19:25.481+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'P2M3', 'starting', 'manual__2024-12-05T12:18:59.835789+00:00', '--job-id', '79', '--raw', '--subdir', 'DAGS_FOLDER/P2M3_alridho_DAG.py', '--cfg-path', '/tmp/tmp3t4sfr4r', '--error-file', '/tmp/tmpv5p0kf2o']
+[2024-12-05T12:19:25.482+0000] {standard_task_runner.py:80} INFO - Job 79: Subtask starting
+[2024-12-05T12:19:27.740+0000] {task_command.py:371} INFO - Running <TaskInstance: P2M3.starting manual__2024-12-05T12:18:59.835789+00:00 [running]> on host f1a3a7cf14eb
+[2024-12-05T12:19:32.406+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alridho
+AIRFLOW_CTX_DAG_ID=P2M3
+AIRFLOW_CTX_TASK_ID=starting
+AIRFLOW_CTX_EXECUTION_DATE=2024-12-05T12:18:59.835789+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-12-05T12:18:59.835789+00:00
+[2024-12-05T12:19:32.511+0000] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2024-12-05T12:19:32.711+0000] {subprocess.py:74} INFO - Running command: ['/bin/bash', '-c', 'echo "Starting the process of reading the CSV file to load the data..."']
+[2024-12-05T12:19:33.155+0000] {subprocess.py:85} INFO - Output:
+[2024-12-05T12:19:33.157+0000] {subprocess.py:92} INFO - Starting the process of reading the CSV file to load the data...
+[2024-12-05T12:19:33.157+0000] {subprocess.py:96} INFO - Command exited with return code 0
+[2024-12-05T12:19:33.209+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=P2M3, task_id=starting, execution_date=20241205T121859, start_date=20241205T121925, end_date=20241205T121933
+[2024-12-05T12:19:33.225+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-12-05T12:19:33.279+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

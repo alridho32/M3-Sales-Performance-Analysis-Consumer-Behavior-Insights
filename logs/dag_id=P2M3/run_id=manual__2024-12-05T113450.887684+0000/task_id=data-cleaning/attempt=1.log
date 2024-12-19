@@ -1,0 +1,23 @@
+[2024-12-05T11:34:57.302+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: P2M3.data-cleaning manual__2024-12-05T11:34:50.887684+00:00 [queued]>
+[2024-12-05T11:34:57.309+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: P2M3.data-cleaning manual__2024-12-05T11:34:50.887684+00:00 [queued]>
+[2024-12-05T11:34:57.310+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T11:34:57.310+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-12-05T11:34:57.310+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T11:34:57.323+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): data-cleaning> on 2024-12-05 11:34:50.887684+00:00
+[2024-12-05T11:34:57.330+0000] {standard_task_runner.py:52} INFO - Started process 406 to run task
+[2024-12-05T11:34:57.332+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'P2M3', 'data-cleaning', 'manual__2024-12-05T11:34:50.887684+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/P2M3_alridho_DAG.py', '--cfg-path', '/tmp/tmpwcaa_ln6', '--error-file', '/tmp/tmpfw6ritdg']
+[2024-12-05T11:34:57.333+0000] {standard_task_runner.py:80} INFO - Job 30: Subtask data-cleaning
+[2024-12-05T11:34:57.484+0000] {task_command.py:371} INFO - Running <TaskInstance: P2M3.data-cleaning manual__2024-12-05T11:34:50.887684+00:00 [running]> on host 9b483ed80620
+[2024-12-05T11:34:57.584+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alridho
+AIRFLOW_CTX_DAG_ID=P2M3
+AIRFLOW_CTX_TASK_ID=data-cleaning
+AIRFLOW_CTX_EXECUTION_DATE=2024-12-05T11:34:50.887684+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-12-05T11:34:50.887684+00:00
+[2024-12-05T11:34:57.614+0000] {python.py:173} INFO - Done. Returned value was: None
+[2024-12-05T11:34:57.637+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=P2M3, task_id=data-cleaning, execution_date=20241205T113450, start_date=20241205T113457, end_date=20241205T113457
+[2024-12-05T11:34:57.664+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-12-05T11:34:57.726+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

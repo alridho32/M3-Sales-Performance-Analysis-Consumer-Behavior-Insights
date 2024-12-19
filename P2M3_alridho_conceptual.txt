@@ -1,0 +1,54 @@
+```
+def scrapereviews_and_ratings(product_urls):
+    reviews = []
+    ratings = []
+
+    driver = webdriver.Chrome()
+
+    try:
+        for product_url in product_urls:
+            print(f"Processing: {product_url}")
+            driver.get(product_url)
+
+            while True:
+                # Scroll down to load content
+                for _ in range(20):  # Scroll 20 times
+                    driver.execute_script("window.scrollBy(0, 250)")
+                    sleep(1)
+
+                html = driver.page_source
+                soup = BeautifulSoup(html, "html.parser")
+
+                # Extract reviews and ratings
+                for product in soup.find_all('div', {"class": "css-1k41fl7"}):
+                    review_element = product.find('span', {"data-testid": "lblItemUlasan"})
+                    reviews.append(review_element.get_text() if review_element else 'None')
+
+                    rating_element = product.find('div', {"class": "rating"})
+                    ratings.append(rating_element.get('aria-label') if rating_element else 'None')
+
+                try:
+                    # Wait for the "next" button to be clickable
+                    next_button_container = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located((By.CLASS_NAME, "css-1xqkwi8"))
+                    )
+                    next_button = next_button_container.find_element(
+                        By.XPATH, './/button[contains(@class, "css-16uzo3v-unf-pagination-item") and @aria-label="Laman berikutnya"]'
+                    )
+
+                    # Scroll the next button into view and click it
+                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", next_button)
+                    driver.execute_script("arguments[0].click();", next_button)
+                    sleep(2)
+
+                except (NoSuchElementException, TimeoutException):
+                    print("No more pages to navigate for this product.")
+                    break
+
+    finally:
+        driver.quit()
+
+    print(f"Scraped {len(reviews)} reviews and {len(ratings)} ratings.")  # Debugging output
+    data = pd.DataFrame({'Review': reviews, 'Rating': ratings})
+    return data
+```

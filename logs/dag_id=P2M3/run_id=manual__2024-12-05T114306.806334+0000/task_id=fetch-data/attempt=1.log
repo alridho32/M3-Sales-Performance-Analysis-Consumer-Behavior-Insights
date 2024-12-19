@@ -1,0 +1,23 @@
+[2024-12-05T11:43:08.720+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: P2M3.fetch-data manual__2024-12-05T11:43:06.806334+00:00 [queued]>
+[2024-12-05T11:43:08.728+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: P2M3.fetch-data manual__2024-12-05T11:43:06.806334+00:00 [queued]>
+[2024-12-05T11:43:08.729+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T11:43:08.729+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-12-05T11:43:08.729+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-12-05T11:43:08.741+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): fetch-data> on 2024-12-05 11:43:06.806334+00:00
+[2024-12-05T11:43:08.748+0000] {standard_task_runner.py:52} INFO - Started process 543 to run task
+[2024-12-05T11:43:08.750+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'P2M3', 'fetch-data', 'manual__2024-12-05T11:43:06.806334+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/P2M3_alridho_DAG.py', '--cfg-path', '/tmp/tmpevo9c0yj', '--error-file', '/tmp/tmp6h0zpr5o']
+[2024-12-05T11:43:08.751+0000] {standard_task_runner.py:80} INFO - Job 35: Subtask fetch-data
+[2024-12-05T11:43:08.848+0000] {task_command.py:371} INFO - Running <TaskInstance: P2M3.fetch-data manual__2024-12-05T11:43:06.806334+00:00 [running]> on host 9b483ed80620
+[2024-12-05T11:43:08.943+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=alridho
+AIRFLOW_CTX_DAG_ID=P2M3
+AIRFLOW_CTX_TASK_ID=fetch-data
+AIRFLOW_CTX_EXECUTION_DATE=2024-12-05T11:43:06.806334+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-12-05T11:43:06.806334+00:00
+[2024-12-05T11:43:08.993+0000] {python.py:173} INFO - Done. Returned value was: None
+[2024-12-05T11:43:09.016+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=P2M3, task_id=fetch-data, execution_date=20241205T114306, start_date=20241205T114308, end_date=20241205T114309
+[2024-12-05T11:43:09.043+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-12-05T11:43:09.104+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check
